@@ -9,18 +9,18 @@ export default class JK extends Component {
 
     componentDidMount() {
         return fetch("http://facebook.github.io/react-native/movies.json")
-                .then(response => response.json())
-                .then(responseJson => {
-                    this.setState({
-                        isLoading: false,
-                        dataSource: responseJson.movies,
-                    }, function () {
+            .then(response => response.json())
+            .then(responseJson => {
+                this.setState({
+                    isLoading: false,
+                    dataSource: responseJson.movies,
+                }, function () {
 
-                    });
-                })
-                .catch(error => {
-                    console.log(error);
                 });
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
 
